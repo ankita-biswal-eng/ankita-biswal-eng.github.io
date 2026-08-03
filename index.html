@@ -1,1 +1,162 @@
 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ankita Biswal</title>
+
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Poppins:wght@300&display=swap" rel="stylesheet">
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    height:100vh;
+    overflow:hidden;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    background:linear-gradient(135deg,#000,#111111,#1a1a1a,#000);
+    background-size:400% 400%;
+    animation:bgMove 12s ease infinite;
+    font-family:'Poppins',sans-serif;
+}
+
+/* Animated Background */
+@keyframes bgMove{
+0%{background-position:0% 50%;}
+50%{background-position:100% 50%;}
+100%{background-position:0% 50%;}
+}
+
+/* Golden Glow */
+body::before{
+content:"";
+position:absolute;
+width:700px;
+height:700px;
+background:radial-gradient(circle,#FFD70033,transparent 70%);
+filter:blur(70px);
+animation:rotateGlow 12s linear infinite;
+}
+
+@keyframes rotateGlow{
+100%{
+transform:rotate(360deg);
+}
+}
+
+/* Glass Box */
+.container{
+position:relative;
+padding:60px 90px;
+background:rgba(255,215,0,0.05);
+border:2px solid rgba(255,215,0,.4);
+backdrop-filter:blur(15px);
+border-radius:25px;
+box-shadow:
+0 0 30px rgba(255,215,0,.3),
+0 0 80px rgba(255,215,0,.15);
+text-align:center;
+animation:fadeIn 2s ease;
+}
+
+@keyframes fadeIn{
+from{
+opacity:0;
+transform:translateY(30px);
+}
+to{
+opacity:1;
+transform:translateY(0);
+}
+}
+
+/* Stylish Text */
+h1{
+font-family:'Great Vibes',cursive;
+font-size:80px;
+font-weight:400;
+line-height:1.4;
+color:#FFD700;
+text-shadow:
+0 0 8px #FFD700,
+0 0 20px #C9A227,
+0 0 45px #FFD700;
+animation:goldGlow 2s ease-in-out infinite alternate;
+}
+
+@keyframes goldGlow{
+from{
+text-shadow:
+0 0 10px #FFD700,
+0 0 25px #B8860B,
+0 0 40px #FFD700;
+}
+to{
+text-shadow:
+0 0 20px #FFF2A8,
+0 0 40px #FFD700,
+0 0 70px #B8860B;
+}
+}
+
+/* Golden Particles */
+.spark{
+position:absolute;
+width:4px;
+height:4px;
+border-radius:50%;
+background:#FFD700;
+box-shadow:0 0 10px #FFD700;
+animation:twinkle 3s infinite;
+}
+
+@keyframes twinkle{
+50%{
+opacity:.2;
+transform:scale(.4);
+}
+100%{
+opacity:1;
+transform:scale(1);
+}
+}
+
+/* Mobile Responsive */
+@media(max-width:768px){
+  .container{padding:40px 30px;}
+  h1{font-size:45px;}
+}
+</style>
+</head>
+<body>
+
+<div class="container">
+<h1>
+Hello I am<br>
+Ankita Biswal<br>
+Welcome to my Profile
+</h1>
+</div>
+
+<script>
+for(let i=0;i<150;i++){
+let s=document.createElement("div");
+s.className="spark";
+s.style.left=Math.random()*100+"vw";
+s.style.top=Math.random()*100+"vh";
+s.style.animationDuration=(2+Math.random()*4)+"s";
+s.style.animationDelay=Math.random()*3+"s";
+document.body.appendChild(s);
+}
+</script>
+
+</body>
+</html>
