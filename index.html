@@ -4,7 +4,8 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Ankita Biswal</title>
-<link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Poppins:wght@300;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 <style>
 * {margin:0; padding:0; box-sizing:border-box;}
 body {
@@ -15,49 +16,89 @@ body {
   display:flex;
   align-items:center;
   justify-content:center;
-  text-align:center;
-  background: radial-gradient(circle at center, #1a1a1a 0%, #000 100%);
+  overflow:hidden;
+  background: linear-gradient(135deg, #000 0%, #1a1200 100%);
+}
+.stars {
+  position:fixed; width:100%; height:100%;
+  background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg"><circle cx="10%" cy="20%" r="1" fill="gold"/><circle cx="80%" cy="70%" r="1.5" fill="gold"/><circle cx="50%" cy="10%" r="1" fill="gold"/></svg>');
+  opacity:0.4;
 }
 .box {
-  padding:60px 40px;
-  border: 2px solid #FFD700;
-  border-radius:20px;
-  box-shadow: 0 0 50px rgba(255,215,0,0.3);
+  text-align:center;
+  padding:70px 60px;
+  border: 1px solid rgba(255,215,0,0.5);
+  border-radius:30px;
+  background: rgba(10,10,10,0.7);
+  backdrop-filter: blur(20px);
+  box-shadow: 0 0 80px rgba(255,215,0,0.3);
+  animation: float 4s ease-in-out infinite;
+}
+@keyframes float {
+  0%,100%{transform:translateY(0px)}
+ 50%{transform:translateY(-15px)}
 }
 .hello {
-  font-family:'Great Vibes', cursive;
-  font-size:80px;
-  color:#FFD700;
-  margin-bottom:20px;
-  animation: glow 2s ease-in-out infinite alternate;
-}
-@keyframes glow {
-  from {text-shadow: 0 0 10px #FFD700;}
-  to {text-shadow: 0 0 30px #FFD700, 0 0 50px #FFD700;}
-}
-.main-text {
-  font-size:32px;
-  font-weight:600;
-  letter-spacing:2px;
-  line-height:1.6;
-}
-.main-text span {
+  font-family:'Cinzel', serif;
+  font-size:90px;
   color:#FFD700;
   font-weight:700;
+  margin-bottom:10px;
+  animation: glow 2.5s ease-in-out infinite alternate;
 }
-@media(max-width:768px){
-  .hello{font-size:60px;}
-  .main-text{font-size:22px;}
-  .box{padding:40px 20px; margin:20px;}
+@keyframes glow {
+  from {text-shadow: 0 0 10px #FFD700, 0 0 20px #FFD700;}
+  to {text-shadow: 0 0 30px #FFD700, 0 0 50px #FFD700, 0 0 80px #FFD700;}
+}
+.name {
+  font-size:40px;
+  font-weight:600;
+  letter-spacing:4px;
+  margin-bottom:15px;
+}
+.name span {color:#FFD700;}
+.welcome {
+  font-size:20px;
+  color:#ccc;
+  font-weight:300;
+  letter-spacing:3px;
+  margin-bottom:40px;
+}
+.line {
+  width:0;
+  height:2px;
+  background:linear-gradient(90deg, transparent, #FFD700, transparent);
+  margin:0 auto 40px;
+  animation: expand 2s forwards;
+}
+@keyframes expand {
+  to{width:200px}
+}
+.icons a {
+  color:#aaa;
+  font-size:24px;
+  margin:0 15px;
+  transition:0.4s;
+}
+.icons a:hover {
+  color:#FFD700;
+  transform:translateY(-5px);
+  text-shadow:0 0 15px #FFD700;
 }
 </style>
 </head>
 <body>
+  <div class="stars"></div>
   <div class="box">
     <div class="hello">hello</div>
-    <div class="main-text">
-      I AM <span>ANKITA BISWAL</span> <br>
-      WELCOME TO MY PROFILE
+    <div class="name">I AM <span>ANKITA BISWAL</span></div>
+    <div class="welcome">WELCOME TO MY PROFILE</div>
+    <div class="line"></div>
+    <div class="icons">
+      <a href="#"><i class="fab fa-instagram"></i></a>
+      <a href="#"><i class="fab fa-linkedin"></i></a>
+      <a href="#"><i class="fab fa-github"></i></a>
+      <a href="#"><i class="fas fa-envelope"></i></a>
     </div>
   </div>
 </body>
